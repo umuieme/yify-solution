@@ -4,8 +4,6 @@ $awardcsv = fopen("awards.csv", "r");
 $contractcsv = fopen("contracts.csv", "r");
 
 
-
-
 while (($data = fgetcsv($awardcsv, 0))) {
 
     $awards[] = $data;
@@ -17,7 +15,7 @@ while (($data = fgetcsv($contractcsv, 0))) {
 }
 
 $total = 0;
-//var_dump($awards);
+
 
 for ($i = 0; $i < count($contracts); $i++) {
 
@@ -40,12 +38,16 @@ for ($i = 0; $i < count($contracts); $i++) {
         }
     }
 
-    if (is_null($result[$i]))
+    if (is_null($result[$i]))		
         $result[$i] = $contracts[$i];
+		
+		for($k = count($result[$i]); $k<count($result[0]); $k++){
+			$result[$i][$k]=null;
+		}
 }
 
 
-$finalcsv = fopen('result.csv', 'w');
+$finalcsv = fopen('final.csv', 'w');
 
 foreach ($result as $r) {
 
@@ -53,5 +55,5 @@ foreach ($result as $r) {
 }
 
 
-echo "Total amount of current contact: " . $total;
+echo "Total amount of current contract: " . $total;
 ?>
