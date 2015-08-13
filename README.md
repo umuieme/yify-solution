@@ -1,7 +1,5 @@
 # yify-solution
-The solution for the clean up contract data sent via email.
+The solution for the clean up contract data sent via email for internship.
 
-You can copy this script to ur website directory. The script initially assumes the cotracts.csv and awards.csv file in the same directory as the solution answer.php file.
-The result.csv is also written in same directory.
-The warning are shown on execution of ans.php script which can be ignored or the warning can be turned off.
-
+Place answer.php script in the directory containing contracts.csv and awards.csv. The final.csv will be created in the same directory. The location of contracts.csv, awards.csv and final.csv can be changed to different directory by changing the first parameter while initializing contractcsv, awardscsv and finalcsv as required.
+It shows some warning which does not effects the work of script. The warning can be deactivated if required.
